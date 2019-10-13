@@ -15,13 +15,15 @@ string decrypt (string encrypt_text, string key);
 
 int main(){
   string open_text;
+  string text_bin;
+  string key;
+  string encrypt_text;
+  string decrypt_text;
+
+
   cout << "Adicione o texto: ";
   getline (cin, open_text);
   
-  string text_bin;
-  string key;
-  string cripto;
-  string decrip;
   
   text_bin = createOpenText(open_text);
 
@@ -31,29 +33,25 @@ int main(){
 
   cout << "Text key: " << key << endl;
 
-  cripto = encrypt(text_bin, key);
+  encrypt_text = encrypt(text_bin, key);
 
-  cout << "Text cri: " << cripto << endl;
+  cout << "Text cri: " << encrypt_text << endl;
 
-  decrip = decrypt(cripto, key);
+  decrypt_text = decrypt(encrypt_text, key);
 
-  cout << "Text dec: " << decrip << endl;
+  cout << "Text dec: " << decrypt_text << endl;
 
 
 }
 
-
 string createOpenText (string text){
-    //string test1("wagner");
     string text_bin = "";
+
     for(int i = 0; i < text.size(); i++){
+
         bitset<8> bitset(text[i]);
-
-        //cout << "c = " << c << endl;
-
         text_bin = text_bin + bitset.to_string<char,std::string::traits_type,std::string::allocator_type>();
     }
-    //cout << text_bin << endl;
 
     return(text_bin);
 }
@@ -78,10 +76,8 @@ string encrypt (string text, string key){
     for(int i = 0; i < text.size(); i++){
     
         encrypt_text = encrypt_text + to_string(text[i] ^ key[i]);
-
-        //cout << ( text[i] ^ key[i] ) << endl;
     }
-    //cout << "v3 :" << v3 << endl;
+
     return(encrypt_text);
 }
 
