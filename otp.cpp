@@ -1,7 +1,6 @@
 #include <iostream> 
 #include <bitset> // Para conversao de string para binario
 #include <string>
-#include <string>
 #include <ctime>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,4 +27,18 @@ string createOpenText(string text){
     //cout << text_bin << endl;
 
     return(text_bin);
+}
+
+string createCloseText(int size){
+    string key = "";
+
+    for(int i = 0; i < size; i++){
+        if(rand()%2 == 1){
+            key += "1";
+        }else{
+            key += "0";
+        }
+
+        return(key);
+    } 
 }
