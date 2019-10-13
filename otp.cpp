@@ -38,7 +38,7 @@ string createCloseText(int size){
         }else{
             key += "0";
         }
-
-        return(key);
     } 
+
+    return(key);
 }
