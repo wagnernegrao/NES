@@ -8,7 +8,7 @@
 using namespace std;
 
 string createOpenText (string text);
-string generateKey (int size);
+string generateKey (int key_size);
 string encrypt (string open_text, string key);
 string decrypt (string encrypt_text, string key);
 
@@ -56,10 +56,10 @@ string createOpenText (string text){
     return(text_bin);
 }
 
-string generateKey (int size){
+string generateKey (int key_size){
     string key = "";
 
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < key_size; i++){
         if(rand()%2 == 1){
             key += "1";
         }else{
