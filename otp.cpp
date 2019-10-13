@@ -49,7 +49,9 @@ string createOpenText (string text){
 
     for(int i = 0; i < text.size(); i++){
 
-        bitset<8> bitset(text[i]);
+        bitset<8> bitset(text[i]); // Convert 1 caracter em 8 bits
+
+        // Converte os bits em string e adiciona na lista
         text_bin = text_bin + bitset.to_string<char,std::string::traits_type,std::string::allocator_type>();
     }
 
@@ -73,6 +75,7 @@ string generateKey (int key_size){
 string encrypt (string open_text, string key){
     string encrypt_text = "";
 
+    // Faz a operacao xor para criptografar
     for(int i = 0; i < open_text.size(); i++){
     
         encrypt_text = encrypt_text + to_string(open_text[i] ^ key[i]);
@@ -82,12 +85,13 @@ string encrypt (string open_text, string key){
 }
 
 string decrypt (string encrypt_text, string key){
-  string decrypt_text = "";
+    string decrypt_text = "";
 
-  for(int i = 0; i < encrypt_text.size(); i++){
+    // Faz a operacao xor para decriptografar
+    for(int i = 0; i < encrypt_text.size(); i++){
     
-    decrypt_text = decrypt_text + to_string(encrypt_text[i] ^ key[i]);
-  }
+        decrypt_text = decrypt_text + to_string(encrypt_text[i] ^ key[i]);
+    }
 
-  return(decrypt_text);
+    return(decrypt_text);
 }
