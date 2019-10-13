@@ -9,7 +9,7 @@ using namespace std;
 
 string createOpenText (string text);
 string generateKey (int size);
-string encrypt (string text, string key);
+string encrypt (string open_text, string key);
 string decrypt (string encrypt_text, string key);
 
 
@@ -24,7 +24,7 @@ int main(){
   cout << "Adicione o texto: ";
   getline (cin, open_text);
   
-  
+
   text_bin = createOpenText(open_text);
 
   cout << "Text bin: " << text_bin << endl;
@@ -70,12 +70,12 @@ string generateKey (int size){
     return(key);
 }
 
-string encrypt (string text, string key){
+string encrypt (string open_text, string key){
     string encrypt_text = "";
 
-    for(int i = 0; i < text.size(); i++){
+    for(int i = 0; i < open_text.size(); i++){
     
-        encrypt_text = encrypt_text + to_string(text[i] ^ key[i]);
+        encrypt_text = encrypt_text + to_string(open_text[i] ^ key[i]);
     }
 
     return(encrypt_text);
