@@ -42,3 +42,16 @@ string createCloseText(int size){
 
     return(key);
 }
+
+string encrypt(string text, string key){
+    string encrypt_text = "";
+
+    for(int i = 0; i < v1.size(); i++){
+    
+        encrypt_text = encrypt_text + to_string(text[i] ^ key[i]);
+
+        //cout << ( text[i] ^ key[i] ) << endl;
+    }
+    //cout << "v3 :" << v3 << endl;
+    return(encrypt_text);
+}
