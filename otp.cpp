@@ -10,6 +10,7 @@ using namespace std;
 string createOpenText (string text);
 string generateKey (int size);
 string encrypt (string text, string key);
+string decrypt (string encrypt_text, string key);
 
 
 int main(){
@@ -20,6 +21,7 @@ int main(){
   string text_bin;
   string key;
   string cripto;
+  string decrip;
   
   text_bin = createOpenText(open_text);
 
@@ -32,6 +34,10 @@ int main(){
   cripto = encrypt(text_bin, key);
 
   cout << "Text cri: " << cripto << endl;
+
+  decrip = decrypt(cripto, key);
+
+  cout << "Text dec: " << decrip << endl;
 
 
 }
@@ -77,4 +83,15 @@ string encrypt (string text, string key){
     }
     //cout << "v3 :" << v3 << endl;
     return(encrypt_text);
+}
+
+string decrypt (string encrypt_text, string key){
+  string decrypt_text = "";
+
+  for(int i = 0; i < encrypt_text.size(); i++){
+    
+    decrypt_text = decrypt_text + to_string(encrypt_text[i] ^ key[i]);
+  }
+
+  return(decrypt_text);
 }
