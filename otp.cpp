@@ -29,7 +29,7 @@ string createOpenText(string text){
     return(text_bin);
 }
 
-string createCloseText(int size){
+string generateKey(int size){
     string key = "";
 
     for(int i = 0; i < size; i++){
