@@ -7,16 +7,37 @@
 
 using namespace std;
 
-string createOpenText(string text);
-string generateKey(int size);
-string encrypt(string text, string key);
+string createOpenText (string text);
+string generateKey (int size);
+string encrypt (string text, string key);
 
 
-void main(){
+int main(){
+  string open_text;
+  cout << "Adicione o texto: ";
+  getline (cin, open_text);
+  
+  string text_bin;
+  string key;
+  string cripto;
+  
+  text_bin = createOpenText(open_text);
+
+  cout << "Text bin: " << text_bin << endl;
+
+  key = generateKey(text_bin.size());
+
+  cout << "Text key: " << key << endl;
+
+  cripto = encrypt(text_bin, key);
+
+  cout << "Text cri: " << cripto << endl;
+
 
 }
 
-string createOpenText(string text){
+
+string createOpenText (string text){
     //string test1("wagner");
     string text_bin = "";
     for(int i = 0; i < text.size(); i++){
@@ -25,13 +46,13 @@ string createOpenText(string text){
         //cout << "c = " << c << endl;
 
         text_bin = text_bin + bitset.to_string<char,std::string::traits_type,std::string::allocator_type>();
-    
+    }
     //cout << text_bin << endl;
 
     return(text_bin);
 }
 
-string generateKey(int size){
+string generateKey (int size){
     string key = "";
 
     for(int i = 0; i < size; i++){
@@ -45,10 +66,10 @@ string generateKey(int size){
     return(key);
 }
 
-string encrypt(string text, string key){
+string encrypt (string text, string key){
     string encrypt_text = "";
 
-    for(int i = 0; i < v1.size(); i++){
+    for(int i = 0; i < text.size(); i++){
     
         encrypt_text = encrypt_text + to_string(text[i] ^ key[i]);
 
