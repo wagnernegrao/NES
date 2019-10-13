@@ -7,10 +7,12 @@
 
 using namespace std;
 
+string createOpenText(string text);
+string generateKey(int size);
+string encrypt(string text, string key);
 
 
-int encrypt(int len){
-    int i;
+void main(){
 
 }
 
