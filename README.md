@@ -16,8 +16,12 @@ You can add other algorithms to cryptology, feel free to contribute.
 ## Dependencies
 
 ### Python
+```sh
+pip install cryptography
+```
 
 ### C++
-
+```sh
+```
 ## How to run
 ## Licence  
