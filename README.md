@@ -13,6 +13,11 @@ Was implemented:
 You can add other algorithms to cryptology, feel free to contribute.
 
 
-# Dependencies
-# How to run
-# Licence  
+## Dependencies
+
+### Python
+
+### C++
+
+## How to run
+## Licence  
