@@ -2,6 +2,7 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
+
 key = os.urandom(16)
 beckend = default_backend()
 text = "a secret message"
