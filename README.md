@@ -28,6 +28,11 @@ sudo apt-get install gcc
 ## How to run
 ### Run python
 You must use the Python 3.5 version or version more actualized.
+```py
+$ python3 3DES.py
+
+$ python3 AES.py
+```
 ### Run C++
 Compile:
 
