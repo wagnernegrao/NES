@@ -24,8 +24,10 @@ pip install cryptography
 ```sh
 sudo apt-get install gcc
 ```
-## How to run
 
+## How to run
+### Run python
+You must use the Python 3.5 version or version more actualized.
 ### Run C++
 Compile:
 
