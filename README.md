@@ -22,6 +22,7 @@ pip install cryptography
 
 ### C++
 ```sh
+sudo apt-get install gcc
 ```
 ## How to run
-## Licence  
+## Licence
