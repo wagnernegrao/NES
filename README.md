@@ -38,3 +38,4 @@ Run:
 ./a.out
 ```
 ## Licence
+[MIT](https://github.com/wagnernegrao/NES/blob/master/LICENSE)
