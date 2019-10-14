@@ -1,9 +1,7 @@
-#include <iostream> 
-#include <bitset> // Para conversao de string para binario
+#include <iostream>
 #include <string>
+#include <bitset> // Para conversao de string para binario
 #include <ctime>
-#include <stdio.h>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -14,33 +12,31 @@ string decrypt (string encrypt_text, string key);
 
 
 int main(){
-  string open_text;
-  string text_bin;
-  string key;
-  string encrypt_text;
-  string decrypt_text;
+    string open_text;
+    string text_bin;
+    string key;
+    string encrypt_text;
+    string decrypt_text;
 
-
-  cout << "Adicione o texto: ";
-  getline (cin, open_text);
+    cout << "Adicione o texto: ";
+    getline (cin, open_text);
   
 
-  text_bin = createOpenText(open_text);
+    text_bin = createOpenText(open_text);
 
-  cout << "Text bin: " << text_bin << endl;
+    cout << "Text bin: " << text_bin << endl;
 
-  key = generateKey(text_bin.size());
+    key = generateKey(text_bin.size());
 
-  cout << "Text key: " << key << endl;
+    cout << "Text key: " << key << endl;
 
-  encrypt_text = encrypt(text_bin, key);
+    encrypt_text = encrypt(text_bin, key);
 
-  cout << "Text cri: " << encrypt_text << endl;
+    cout << "Text cri: " << encrypt_text << endl;
 
-  decrypt_text = decrypt(encrypt_text, key);
+    decrypt_text = decrypt(encrypt_text, key);
 
-  cout << "Text dec: " << decrypt_text << endl;
-
+    cout << "Text dec: " << decrypt_text << endl;
 
 }
 
