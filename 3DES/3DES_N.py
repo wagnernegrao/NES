@@ -1,6 +1,6 @@
 from Crypto.Cipher import DES
 
-key = 'aula do samarone'
+key = 'hello123'
 
 message = 'espero que funcione'
 
@@ -12,9 +12,19 @@ def pad(message):
 
     return(text)
 
+
 text = pad(message)
 print(f"msg {len(message)}  - pad {len(text)}", )
+
 
 def encrypt(text):
     return(cipher.encrypt(text))
 
+test1 = encrypt(text)
+print('-> ', test1)
+
+def decrypt(ciphertext):
+    return(cipher.decrypt(ciphertext).decode('uft-8'))
+
+test2 = decrypt(test1)
+print('-> ', test2)
