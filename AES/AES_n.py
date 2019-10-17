@@ -5,7 +5,6 @@ key = b'aula do samarone'
 message = str(input('Add text: '))
 # message = '6 semestre'
 
-
 cipher = AES.new(key)  # Obtemos um objeto para podermos criptografar
 
 
@@ -32,18 +31,15 @@ def decrypt(ciphertext):
     return(dec[:len(dec) - remove])  # apresenta ate aquele valor subtraido
 
 
-
 pad_1 = pad(message)
+enc = encrypt(pad_1)
+dec = decrypt(enc)
+
 
 print("Message:", message)
 
-
 print("pad:", pad_1)
 
-enc = encrypt(pad_1)
-
 print("cifrado:", enc)
-
-dec = decrypt(enc)
 
 print("decifrado:", dec)
