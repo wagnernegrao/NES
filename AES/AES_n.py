@@ -31,15 +31,15 @@ def decrypt(ciphertext):
     return(dec[:len(dec) - remove])  # apresenta ate aquele valor subtraido
 
 
-pad_1 = pad(message)
-enc = encrypt(pad_1)
-dec = decrypt(enc)
+text = pad(message)
+ciphertext = encrypt(text)
+plaintext = decrypt(ciphertext)
 
 
 print("Message:", message)
 
-print("pad:", pad_1)
+print("pad:", text)
 
-print("cifrado:", enc)
+print("cifrado:", ciphertext)
 
-print("decifrado:", dec)
+print("decifrado:", plaintext)
