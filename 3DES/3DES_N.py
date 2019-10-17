@@ -1,10 +1,9 @@
 from Crypto.Cipher import DES3
 
-cipher = DES3.new(key, DES3.MODE_ECB)  # Create object 3DES
 key = 'aula do samarone'  # 16 bits
+cipher = DES3.new(key, DES3.MODE_ECB)  # Create object 3DES
 
 message = str(input('Add text: '))
-# message = 'espero que funcione'
 
 
 def pad(message):
@@ -14,15 +13,9 @@ def pad(message):
     return(text)
 
 
-text = pad(message)
-print(f"msg {len(message)}  - pad {len(text)}", )
-
-
 def encrypt(text):
     return(cipher.encrypt(text))
 
-test1 = encrypt(text)
-print('-> ', test1)
 
 def decrypt(ciphertext):
     decodificed = cipher.decrypt(ciphertext).decode('utf-8')
@@ -30,6 +23,13 @@ def decrypt(ciphertext):
 
     return(decodificed)
 
+
+
+text = pad(message)
+print(f"msg {len(message)}  - pad {len(text)}", )
+
+test1 = encrypt(text)
+print('-> ', test1)
 
 test2 = decrypt(test1)
 print('-> ', len(test2))
