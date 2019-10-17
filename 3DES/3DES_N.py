@@ -35,10 +35,9 @@ def decrypt(ciphertext):
 
 
 text = pad(message)
-print(f"msg {len(message)}  - pad {len(text)}", )
+encrypted_text = encrypt(text)
+decrypted_text = decrypt(encrypted_text)
 
-test1 = encrypt(text)
-print('-> ', test1)
-
-test2 = decrypt(test1)
-print('-> ', len(test2))
+print(f'Message: {message}')
+print(f'Encrypted text: {encrypted_text}')
+print(f'Decrypted text: {decrypted_text}')
