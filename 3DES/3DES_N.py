@@ -1,8 +1,9 @@
 from Crypto.Cipher import DES3
 
-key = '1234567812345678'
+key = 'aula do samarone'  # 16 bits
 
-message = 'espero que funcione'
+message = str(input('Add text: '))
+#message = 'espero que funcione'
 
 cipher = DES3.new(key, DES3.MODE_ECB)
 
