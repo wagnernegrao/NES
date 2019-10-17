@@ -2,22 +2,24 @@ from Crypto.Cipher import AES
 
 key = b'aula do samarone'
 
-# message = str(input())
-message = '6 semestre'
+message = str(input('Add text: '))
+# message = '6 semestre'
 
 
 cipher = AES.new(key)  # Obtemos um objeto para podermos criptografar
 
 
-def pad(s):
+def pad(message):
     '''
     recebe o comprimento da mensagem e adiciona a quantidade de *
     para tornalauniformente divisilvel por 16, isso ocorre por causa do aes que
     tem dados de comprimento de 16 bits
-    '''
-    value = s + ((16 - len(s) % 16) * '{')
 
-    return(value)
+    a partir do valor gerado concatena a quantidade de {
+    '''
+    text = message + ((16 - len(message) % 16) * '{') 
+
+    return(text)
 
 
 def encrypt(text):
@@ -25,13 +27,16 @@ def encrypt(text):
 
 
 def decrypt(ciphertext):
-    dec = cipher.decrypt(ciphertext).decode('utf-8') # para remover o b do inicio da string
-    remove = str(dec).count('{')
-    return(dec[:len(dec) - remove])  # print ate aquele valor
+    decodificed = cipher.decrypt(ciphertext).decode('utf-8') # para remover o b do inicio da string
+    remove = str(dec).count('{')  # remove os { da palavra decifrada
+    return(dec[:len(dec) - remove])  # apresenta ate aquele valor subtraido
 
+
+
+pad_1 = pad(message)
 
 print("Message:", message)
-pad_1 = pad(message)
+
 
 print("pad:", pad_1)
 
