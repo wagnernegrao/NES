@@ -17,6 +17,7 @@ You can add other algorithms to cryptology, feel free to contribute.
 
 ### Python
 ```sh
+pip install pycrypto
 pip install cryptography
 ```
 
@@ -28,7 +29,7 @@ sudo apt-get install gcc
 ## How to run
 ### Run python
 You must use the Python 3.5 version or version more actualized.
-```py
+```
 $ python3 3DES.py
 
 $ python3 AES.py
