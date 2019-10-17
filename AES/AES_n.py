@@ -35,9 +35,18 @@ def encrypt(text):
 
 
 def decrypt(ciphertext):
-    decodificed = cipher.decrypt(ciphertext).decode('utf-8') # para remover o b do inicio da string
-    remove = str(decodificed).count('{')  # remove os { da palavra decifrada
-    return(decodificed[:len(decodificed) - remove])  # apresenta ate aquele valor subtraido
+    '''
+    Function decrypt:
+
+    Receive a ciphertext.
+    Decrypt the text using utf-8 to remove 'b' verify of the encrypt.
+    Remove '{' inserted in the process of pad.
+    '''
+
+    decodificed = cipher.decrypt(ciphertext).decode('utf-8')
+    decodificed = decodificed.replace('{', '')
+
+    return(decodificed)
 
 
 text = pad(message)
