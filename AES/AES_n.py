@@ -20,3 +20,5 @@ def pad(s):
     return(value)
 
 
+def encrypt(text):
+    return(cipher.encrypt(text))
