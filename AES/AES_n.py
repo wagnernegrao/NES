@@ -51,13 +51,9 @@ def decrypt(ciphertext):
 
 text = pad(message)
 ciphertext = encrypt(text)
-plaintext = decrypt(ciphertext)
+decrypted_text = decrypt(ciphertext)
 
-
-print("Message:", message)
-
-print("pad:", text, len(text))
-
-print("cifrado:", ciphertext)
-
-print("decifrado:", plaintext)
+print('\n')
+print(f'Message: {message}')
+print(f'Ciphertext: {ciphertext}')
+print(f'Decrypted text: {decrypted_text}')
