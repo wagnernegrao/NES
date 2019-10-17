@@ -22,6 +22,12 @@ def encrypt(text):
 
 
 def decrypt(ciphertext):
+    '''
+    Receive a ciphertext.
+    Decrypt the text using utf-8 to remove 'b' verify of the encrypt.
+    Remove '{' inserted in the process of pad.
+    '''
+    
     decodificed = cipher.decrypt(ciphertext).decode('utf-8')
     decodificed = decodificed.replace('{', '')
 
