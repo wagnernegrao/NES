@@ -34,6 +34,8 @@ def encrypt(text):
 
 def decrypt(ciphertext):
     '''
+    Function decrypt:
+
     Receive a ciphertext.
     Decrypt the text using utf-8 to remove 'b' verify of the encrypt.
     Remove '{' inserted in the process of pad.
