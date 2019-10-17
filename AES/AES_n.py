@@ -10,15 +10,16 @@ cipher = AES.new(key)  # Obtemos um objeto para podermos criptografar
 
 def pad(message):
     '''
-    recebe o comprimento da mensagem e adiciona a quantidade de *
-    para tornalauniformente divisilvel por 16, isso ocorre por causa do aes que
-    tem dados de comprimento de 16 bits
+    Function pad:
 
-    ele adiciona isso pq ocorre a encriptacao de 16 em 16
+    It receives the message and from its size adds bits to make it divisible
+    by 16 so it is compatible with 3DES that checks for multiples of 16.
 
-    a partir do valor gerado concatena a quantidade de {
+    From the generated value is concatenated the amount of '{' for the
+    correct size.
     '''
-    text = message + ((16 - len(message) % 16) * '{') 
+
+    text = message + ((16 - len(message) % 16) * '{')
 
     return(text)
 
