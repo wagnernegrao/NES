@@ -22,3 +22,23 @@ def pad(s):
 
 def encrypt(text):
     return(cipher.encrypt(text))
+
+
+def decrypt(ciphertext):
+    dec = cipher.decrypt(ciphertext).decode('utf-8') # para remover o b do inicio da string
+    remove = str(dec).count('{')
+    return(dec[:len(dec) - remove])  # print ate aquele valor
+
+
+print("Message:", message)
+pad_1 = pad(message)
+
+print("pad:", pad_1)
+
+enc = encrypt(pad_1)
+
+print("cifrado:", enc)
+
+dec = decrypt(enc)
+
+print("decifrado:", dec)
