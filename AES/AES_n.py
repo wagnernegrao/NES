@@ -14,6 +14,8 @@ def pad(message):
     para tornalauniformente divisilvel por 16, isso ocorre por causa do aes que
     tem dados de comprimento de 16 bits
 
+    ele adiciona isso pq ocorre a encriptacao de 16 em 16
+
     a partir do valor gerado concatena a quantidade de {
     '''
     text = message + ((16 - len(message) % 16) * '{') 
@@ -27,8 +29,8 @@ def encrypt(text):
 
 def decrypt(ciphertext):
     decodificed = cipher.decrypt(ciphertext).decode('utf-8') # para remover o b do inicio da string
-    remove = str(dec).count('{')  # remove os { da palavra decifrada
-    return(dec[:len(dec) - remove])  # apresenta ate aquele valor subtraido
+    remove = str(decodificed).count('{')  # remove os { da palavra decifrada
+    return(decodificed[:len(decodificed) - remove])  # apresenta ate aquele valor subtraido
 
 
 text = pad(message)
@@ -38,7 +40,7 @@ plaintext = decrypt(ciphertext)
 
 print("Message:", message)
 
-print("pad:", text)
+print("pad:", text, len(text))
 
 print("cifrado:", ciphertext)
 
