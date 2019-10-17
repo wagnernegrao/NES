@@ -1,14 +1,14 @@
-from Crypto.Cipher import DES
+from Crypto.Cipher import DES3
 
-key = 'hello123'
+key = '1234567812345678'
 
 message = 'espero que funcione'
 
-cipher = DES.new(key, DES.MODE_ECB)
+cipher = DES3.new(key, DES3.MODE_ECB)
 
 def pad(message):
 
-    text = message + ((8 - len(message) % 8) * ' ')
+    text = message + ((16 - len(message) % 16) * '{')
 
     return(text)
 
@@ -24,7 +24,11 @@ test1 = encrypt(text)
 print('-> ', test1)
 
 def decrypt(ciphertext):
-    return(cipher.decrypt(ciphertext).decode('uft-8'))
+    decodificed = cipher.decrypt(ciphertext).decode('utf-8')
+    decodificed = decodificed.replace('{', '')
+
+    return(decodificed)
+
 
 test2 = decrypt(test1)
-print('-> ', test2)
+print('-> ', len(test2))
