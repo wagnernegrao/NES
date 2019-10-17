@@ -25,6 +25,12 @@ def pad(message):
 
 
 def encrypt(text):
+    '''
+    Function encrypt:
+
+    Encrypt text
+    '''
+
     return(cipher.encrypt(text))
 
 
