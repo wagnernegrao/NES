@@ -7,6 +7,15 @@ message = str(input('Add text: '))
 
 
 def pad(message):
+    '''
+    Function pad:
+
+    It receives the message and from its size adds bits to make it divisible
+    by 16 so it is compatible with 3DES that checks for multiples of 16.
+
+    From the generated value is concatenated the amount of '{' for the
+    correct size.
+    '''
 
     text = message + ((16 - len(message) % 16) * '{')
 
@@ -38,6 +47,7 @@ text = pad(message)
 encrypted_text = encrypt(text)
 decrypted_text = decrypt(encrypted_text)
 
+print('\n')
 print(f'Message: {message}')
 print(f'Encrypted text: {encrypted_text}')
 print(f'Decrypted text: {decrypted_text}')
