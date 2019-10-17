@@ -1,11 +1,11 @@
 from Crypto.Cipher import DES3
 
+cipher = DES3.new(key, DES3.MODE_ECB)  # Create object 3DES
 key = 'aula do samarone'  # 16 bits
 
 message = str(input('Add text: '))
-#message = 'espero que funcione'
+# message = 'espero que funcione'
 
-cipher = DES3.new(key, DES3.MODE_ECB)
 
 def pad(message):
 
