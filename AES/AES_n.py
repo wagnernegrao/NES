@@ -1,11 +1,9 @@
 from Crypto.Cipher import AES
 
-key = b'aula do samarone'
+key = b'aula do samarone'  # 16 bits
+cipher = AES.new(key)  # Created object AES
 
 message = str(input('Add text: '))
-# message = '6 semestre'
-
-cipher = AES.new(key)  # Obtemos um objeto para podermos criptografar
 
 
 def pad(message):
