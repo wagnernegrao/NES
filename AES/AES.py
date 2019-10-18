@@ -1,7 +1,9 @@
+import os
 from Crypto.Cipher import AES
+from Crypto.Protocol.KDF import PBKDF2
+
 
 key = 'aula do samarone'  # 16 bits
-cipher = AES.new(key)  # Created object AES
 
 message = str(input('Add text: '))
 
@@ -22,17 +24,30 @@ def pad(message):
     return(text)
 
 
-def encrypt(text):
+def generate_hash_key(key, key_len=16):
+    '''
+    Function Generate hash key
+    '''
+    salt = os.urandom(8)
+
+    hash_key = PBKDF2(key, salt, dkLen=key_len)
+
+    return(hash_key)
+
+
+def encrypt(text, key):
     '''
     Function encrypt:
 
     Encrypt text
     '''
 
-    return(cipher.encrypt(text))
+    cipher = AES.new(key)  # Created object AES
+
+    return(cipher.encrypt(text), cipher)
 
 
-def decrypt(ciphertext):
+def decrypt(ciphertext, cipher):
     '''
     Function decrypt:
 
@@ -48,10 +63,12 @@ def decrypt(ciphertext):
 
 
 text = pad(message)
-ciphertext = encrypt(text)
-decrypted_text = decrypt(ciphertext)
+hash_key = generate_hash_key(key)
+ciphertext, cipher = encrypt(text, hash_key)
+decrypted_text = decrypt(ciphertext, cipher)
 
 print('\n')
 print(f'Message: {message}')
+print(f'Hash key: {hash_key}')
 print(f'Ciphertext: {ciphertext}')
 print(f'Decrypted text: {decrypted_text}')
