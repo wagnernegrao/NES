@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
 #include <bitset> // Para conversao de string para binario
+#include <random>
 #include <ctime>
 
 using namespace std;
 
 string createOpenText (string text);
+int generateRandom();
 string generateKey (int key_size);
 string encrypt (string open_text, string key);
 string decrypt (string encrypt_text, string key);
@@ -54,11 +56,21 @@ string createOpenText (string text){
     return(text_bin);
 }
 
+int generateRandom(){
+    random_device random_device;
+    mt19937 random_engine(random_device());
+    uniform_int_distribution<long int> distribution_1_100(1, 9999999999999);
+
+    auto const randomNumber = distribution_1_100(random_engine);
+
+    return(randomNumber);
+}
+
 string generateKey (int key_size){
     string key = "";
 
     for(int i = 0; i < key_size; i++){
-        if(rand()%2 == 1){
+        if(generateRandom()%2 == 1){
             key += "1";
         }else{
             key += "0";
