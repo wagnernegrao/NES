@@ -7,6 +7,7 @@ Was implemented:
 - [x] OTP (One Time Pad)
 - [x] AES (Advanced Encryption Standard)
 - [x] 3DES (Triple Data Encryption Standard)
+- [x] Pseudorandom Number Generators
 - [ ] ?
 
 
@@ -15,10 +16,15 @@ You can add other algorithms to cryptology, feel free to contribute.
 
 ## Dependencies
 
+```py
+import os
+from Crypto.Cipher import DES3
+from Crypto.Cipher import AES
+```
+
 ### Python
 ```sh
 pip install pycrypto
-pip install cryptography
 ```
 
 ### C++
