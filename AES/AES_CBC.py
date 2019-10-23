@@ -37,6 +37,7 @@ def encrypt(text, key):
 
     return(cipher.encrypt(text), cipher)
 
+
 def decrypt(ciphertext, cipher):
     '''
     Function decrypt:
@@ -53,12 +54,12 @@ def decrypt(ciphertext, cipher):
 
 
 text = pad(message)
-#hash_key = generate_hash_key(key)
-ciphertext, cipher = encrypt(text, hash_key)
+# hash_key = generate_hash_key(key)
+ciphertext, cipher = encrypt(text, key)
 decrypted_text = decrypt(ciphertext, cipher)
 
 print('\n')
 print(f'Message: {message}')
-print(f'Hash key: {hash_key}')
+# print(f'Hash key: {hash_key}')
 print(f'Ciphertext: {ciphertext}')
 print(f'Decrypted text: {decrypted_text}')
