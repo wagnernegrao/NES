@@ -51,3 +51,14 @@ def decrypt(ciphertext, cipher):
 
     return(decodificed)
 
+
+text = pad(message)
+#hash_key = generate_hash_key(key)
+ciphertext, cipher = encrypt(text, hash_key)
+decrypted_text = decrypt(ciphertext, cipher)
+
+print('\n')
+print(f'Message: {message}')
+print(f'Hash key: {hash_key}')
+print(f'Ciphertext: {ciphertext}')
+print(f'Decrypted text: {decrypted_text}')
