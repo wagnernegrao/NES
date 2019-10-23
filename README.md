@@ -25,6 +25,7 @@ from Crypto.Cipher import AES
 ### Python
 ```sh
 pip install pycrypto
+pip install cryptography
 ```
 
 ### C++
