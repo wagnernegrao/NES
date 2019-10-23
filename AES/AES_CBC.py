@@ -1,8 +1,9 @@
 import os
 from Crypto.Cipher import AES
+from Crypto import Random
 
 
-key = 'aula do samarone'  # 16 bits
+key = b'aula do samarone'  # 16 bits
 
 #  message = str(input('Add text: '))
 message = 'wagner'
@@ -22,3 +23,16 @@ def pad(message):
     text = message + ((16 - len(message) % 16) * '{')
 
     return(text)
+
+
+def encrypt(text, key):
+    '''
+    Function encrypt:
+
+    Encrypt text
+    '''
+    iv = Random.new().read(AES.block_size)
+
+    cipher = AES.new(key, AES.MODE_CBC, iv)  # Created object AES
+
+    return(cipher.encrypt(text), cipher)
