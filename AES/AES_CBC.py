@@ -36,3 +36,18 @@ def encrypt(text, key):
     cipher = AES.new(key, AES.MODE_CBC, iv)  # Created object AES
 
     return(cipher.encrypt(text), cipher)
+
+def decrypt(ciphertext, cipher):
+    '''
+    Function decrypt:
+
+    Receive a ciphertext.
+    Decrypt the text using utf-8 to remove 'b' verify of the encrypt.
+    Remove '{' inserted in the process of pad.
+    '''
+
+    decodificed = cipher.decrypt(ciphertext).decode('utf-8')
+    decodificed = decodificed.replace('{', '')
+
+    return(decodificed)
+
